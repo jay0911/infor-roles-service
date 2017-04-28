@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 import com.infor.dao.RolesMaintananceDao;
-import com.infor.dto.UserMaintenanceDTO;
+import com.infor.dto.MaintenanceDTO;
 import com.infor.models.InforRoles;
 
 @Repository
@@ -25,7 +25,7 @@ public class RolesMaintenanceIDao extends HibernateDaoSupport implements RolesMa
 	}
 
 	@Override
-	public void deleteRole(UserMaintenanceDTO dto) {
+	public void deleteRole(MaintenanceDTO dto) {
 		// TODO Auto-generated method stub
 		Query query = getSessionFactory().createQuery(ROLES_DELETE_HQL);
 	    query.setParameter("role", dto.getPosition());

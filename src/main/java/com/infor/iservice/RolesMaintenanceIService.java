@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.infor.dao.RolesMaintananceDao;
-import com.infor.dto.UserMaintenanceDTO;
+import com.infor.dto.MaintenanceDTO;
 import com.infor.models.InforRoles;
 import com.infor.models.InforUser;
 import com.infor.service.RolesMaintenanceService;
@@ -29,13 +29,13 @@ public class RolesMaintenanceIService implements RolesMaintenanceService{
 	}
 
 	@Override
-	public void deleteRole(UserMaintenanceDTO dto) {
+	public void deleteRole(MaintenanceDTO dto) {
 		// TODO Auto-generated method stub
 		md.deleteRole(dto);
 	}
 
 	@Override
-	public void saveRole(UserMaintenanceDTO dto) {
+	public void saveRole(MaintenanceDTO dto) {
 		// TODO Auto-generated method stub
 		InforRoles role = new InforRoles();
 		role.setRole(dto.getPosition());

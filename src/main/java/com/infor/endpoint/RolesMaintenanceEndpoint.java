@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.infor.dto.UserMaintenanceDTO;
+import com.infor.dto.MaintenanceDTO;
 import com.infor.models.AjaxResponseBody;
 import com.infor.service.RolesMaintenanceService;
 
@@ -17,14 +17,14 @@ public class RolesMaintenanceEndpoint {
 	private RolesMaintenanceService s;
 
 	@GetMapping("/getroles")
-	public UserMaintenanceDTO getRoles(){
-		UserMaintenanceDTO dto = new UserMaintenanceDTO();
+	public MaintenanceDTO getRoles(){
+		MaintenanceDTO dto = new MaintenanceDTO();
 		dto.setInforRoles(s.selectRoles());
 		return dto;
 	}
 
 	@PostMapping("/deleterole")
-	public AjaxResponseBody deleterole(@RequestBody UserMaintenanceDTO dto){
+	public AjaxResponseBody deleterole(@RequestBody MaintenanceDTO dto){
 		AjaxResponseBody response = new AjaxResponseBody();
 		try{
 			s.deleteRole(dto);
@@ -38,7 +38,7 @@ public class RolesMaintenanceEndpoint {
 	}
 	
 	@PostMapping("/saverole")
-	public AjaxResponseBody saverole(@RequestBody UserMaintenanceDTO dto){
+	public AjaxResponseBody saverole(@RequestBody MaintenanceDTO dto){
 		AjaxResponseBody response = new AjaxResponseBody();
 		try{
 			s.saveRole(dto);
